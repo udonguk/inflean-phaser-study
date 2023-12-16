@@ -110,6 +110,7 @@ export default class LoadingScene extends Phaser.Scene {
   }
 
   create() {
+    // 로딩이 끝나면 플레이 게임
     this.add.text(20, 20, 'Loading game...');
     this.scene.start('playGame');
 

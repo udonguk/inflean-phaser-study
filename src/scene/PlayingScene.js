@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import Player from '@/characters/Player.js';
+import setBackground from '@/utils/backgroundManager.js';
 
 export default class PlayingScene extends Phaser.Scene {
   constructor() {
@@ -28,6 +29,6 @@ export default class PlayingScene extends Phaser.Scene {
     this.m_player = new Player(this);
 
     // PlayingScene의 background를 설정합니다.
-    // setBackground(this, "background1");
+    setBackground(this, 'background1');
   }
 }
