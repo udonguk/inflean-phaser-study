@@ -11,5 +11,14 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.setBodySize(28, 32);
 
     this.setDepth(20);
+
+    this.m_playerSpped = 3;
+  }
+
+  move(vector) {
+    this.x += vector[0] * this.m_playerSpped;
+    this.y += vector[1] * this.m_playerSpped;
+
+    this.flipX = vector[0] !== -1;
   }
 }
