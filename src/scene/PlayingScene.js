@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import Player from '@/characters/Player.js';
 import setBackground from '@/utils/backgroundManager.js';
 import Config from '@/config/Config.js';
+import { addMobEvent } from '@/utils/mobManager.js';
 
 export default class PlayingScene extends Phaser.Scene {
   constructor() {
@@ -36,6 +37,11 @@ export default class PlayingScene extends Phaser.Scene {
     this.cameras.main.startFollow(this.m_player);
 
     this.m_cursorKeys = this.input.keyboard.createCursorKeys();
+
+    this.m_mobs = this.physics.add.group();
+    this.m_mobEvents = [];
+
+    addMobEvent(this, 1000, 'mob1', 'mob1_anim', 10, 0.9);
   }
 
   update() {
